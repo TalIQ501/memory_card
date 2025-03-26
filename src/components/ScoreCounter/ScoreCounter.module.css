@@ -1,0 +1,7 @@
+.scoreCounter {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 1.25rem;
+    padding: 20px;
+}
