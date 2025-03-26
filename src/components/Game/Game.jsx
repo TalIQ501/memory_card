@@ -63,7 +63,7 @@ export const Game = () => {
                 />
                 <div className={styles.msg}>Don't click the same image twice in a row!</div>
             </div>
-            <div className={styles.gridContainer}>
+            <div className={`${styles.gridContainer} ${styles.background}`}>
                 {
                     cards.map(card => (
                         <MemoryCard 

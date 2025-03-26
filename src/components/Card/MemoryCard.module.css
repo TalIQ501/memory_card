@@ -13,6 +13,7 @@ img {
     padding: 10px;
     border: 0.5px solid #ddd;
     border-radius: 10px;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .imgContainer {
