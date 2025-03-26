@@ -4,6 +4,8 @@ import { fetchTeams } from "../../func/fetchTeams";
 import { getTeam } from "../../func/getData";
 import { ScoreCounter } from "../ScoreCounter/ScoreCounter";
 
+import styles from './Game.module.css'
+
 export const Game = () => {
     const [data, setData] = useState();
     const [cards, setCards] = useState([]);
@@ -53,22 +55,27 @@ export const Game = () => {
     };
 
     return (
-        <div id="game-div">
-            <ScoreCounter
-                s={score}
-                hs={highScore}
-             />
-            {
-                cards.map(card => (
-                    <MemoryCard 
-                        key={card.id} 
-                        title={card.name}
-                        logo={card.logo}
-                        onClickFunc={() => clickHandler(card.id)}
-                    />
+        <div id="game-div" className={styles.gameDiv}>
+            <div className={styles.headerBar}>
+                <ScoreCounter
+                    s={score}
+                    hs={highScore}
+                />
+                <div className={styles.msg}>Don't click the same image twice in a row!</div>
+            </div>
+            <div className={styles.gridContainer}>
+                {
+                    cards.map(card => (
+                        <MemoryCard 
+                            key={card.id} 
+                            title={card.name}
+                            logo={card.logo}
+                            onClickFunc={() => clickHandler(card.id)}
+                        />
+                        )
                     )
-                )
-            }
+                }
+            </div>
         </div>
     );
 }
